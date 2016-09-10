@@ -1,9 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var Captcha = (function () {
     function Captcha() {
         this.numberStrings = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
@@ -32,17 +27,8 @@ var Captcha = (function () {
     return Captcha;
 }());
 exports.Captcha = Captcha;
-var Operand = (function () {
-    function Operand(n) {
-        this.n = n;
-    }
-    Operand.prototype.toText = function () { return ''; };
-    return Operand;
-}());
-var TextOperand = (function (_super) {
-    __extends(TextOperand, _super);
+var TextOperand = (function () {
     function TextOperand(n) {
-        _super.call(this, n);
         this.numberStrings = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
         this.n = n;
     }
@@ -50,18 +36,16 @@ var TextOperand = (function (_super) {
         return "" + this.numberStrings[this.n];
     };
     return TextOperand;
-}(Operand));
-var NumberOperand = (function (_super) {
-    __extends(NumberOperand, _super);
+}());
+var NumberOperand = (function () {
     function NumberOperand(n) {
-        _super.call(this, n);
         this.n = n;
     }
     NumberOperand.prototype.toText = function () {
         return "" + this.n;
     };
     return NumberOperand;
-}(Operand));
+}());
 var OperatorOperand = (function () {
     function OperatorOperand(n) {
         this.operators = { 1: '+', 2: '-', 3: '*' };

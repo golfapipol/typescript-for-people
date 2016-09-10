@@ -29,19 +29,14 @@ export class Captcha {
   }
 }
 
-class Operand {
-  n: number;
-
-  constructor(n: number) {
-    this.n = n;
-  }
-  toText ():string { return ''; }
+interface Operand {
+  toText(): string;
 }
 
-class TextOperand extends Operand {
+class TextOperand implements Operand {
   numberStrings: string[];
+  n: number;
   constructor (n: number) {
-    super(n);
     this.numberStrings = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
     this.n = n;
   }
@@ -51,9 +46,9 @@ class TextOperand extends Operand {
   }
 }
 
-class NumberOperand extends Operand {
+class NumberOperand implements Operand {
   constructor (public n: number) {
-    super(n);
+
   }
 
   toText (): string {
@@ -61,7 +56,7 @@ class NumberOperand extends Operand {
   }
 }
 
-class OperatorOperand {
+class OperatorOperand implements Operand {
   operators: any;
   n: number;
   constructor (n: number) {
