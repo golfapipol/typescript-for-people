@@ -6,12 +6,15 @@
   "scripts": {
     "test": "./node_modules/.bin/jest",
     "compile": "./node_modules/.bin/tsc",
-    "compile-watch": "./node_modules/.bin/tsc --watch"
+    "compile-watch": "./node_modules/.bin/tsc --watch",
+    "start": "./node_modules/.bin/lite-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^15.1.1",
-    "typescript": "^2.0.0"
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.0",
+    "webpack": "^1.13.2"
   }
 }
